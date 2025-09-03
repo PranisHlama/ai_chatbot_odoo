@@ -1,0 +1,27 @@
+<!-- <?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Demo Chat Bot -->
+        <record id="demo_chat_bot" model="chatgpt.chat.bot">
+            <field name="name">AI Assistant</field>
+            <field name="active">True</field>
+            <field name="description">A helpful AI assistant that can answer questions and provide support in discussions.</field>
+            <field name="system_prompt">You are a helpful AI assistant in an Odoo discussion. You help users with their questions about Odoo, business processes, and general inquiries. Keep your responses concise, friendly, and professional. If you don't know something, politely say so and suggest where they might find help.</field>
+            <field name="auto_respond">True</field>
+            <field name="response_delay">0</field>
+            <field name="max_response_length">300</field>
+            <field name="respond_to_keywords">help,question,how,what,why,when,where,assist,support</field>
+            <field name="respond_to_all">False</field>
+        </record>
+
+        <!-- Demo Bot Configuration -->
+        <record id="demo_bot_config" model="chatgpt.bot.config">
+            <field name="name">General Discussion Bot</field>
+            <field name="active">True</field>
+            <field name="bot_id" ref="demo_chat_bot"/>
+            <field name="model">mail.thread</field>
+            <field name="enable_context">True</field>
+            <field name="context_length">5</field>
+        </record>
+    </data>
+</odoo> -->
