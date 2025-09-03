@@ -16,6 +16,7 @@
             <field name="partner_id" ref="gemini_chatbot_chatbot_partner"/>
             <field name="password">123</field>
             <field name="active">True</field>
+            <field name="chatbot_user">True</field>
         </record>
 
     </data>
