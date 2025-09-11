@@ -6,11 +6,13 @@ from bs4 import BeautifulSoup
 _logger = logging.getLogger(__name__)
 
 def strip_markdown(md_text_: str) -> str:
-    html = markdown.markdown(md_text_)
+    html = markdown.markdown(md_text_, extensions=['extra'])
 
     soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text(separator="\n")
-    return text.strip()
+    text = soup.get_text(separator="\n\n")
+    text = text.strip()
+    text = re.sub(r'\n{3,}', '\n\n', text)  # Replace 3+ newlines with 2 newlines
+    return text
 
 class MailMessage(models.Model):
     _inherit = "mail.message"
