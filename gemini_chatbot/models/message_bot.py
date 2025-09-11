@@ -1,0 +1,50 @@
+from odoo import models, api
+import re, logging
+
+_logger = logging.getLogger(__name__)
+
+class MailMessage(models.Model):
+    _inherit = "mail.message"
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        _logger.info(f"[GeminiBot] create() called with vals: {vals_list}")
+
+        messages = super().create(vals_list)
+        bot_partner = self.env['res.partner'].browse(96)
+        for message in messages:
+            if message.model == "discuss.channel" and message.res_id:
+                channel = self.env["discuss.channel"].browse(message.res_id)
+                _logger.info(f"[GeminiBot] New message in channel: {channel.name}, from: {message.author_id.display_name}")
+
+                # Skip bot's own messages
+                if bot_partner and message.author_id == bot_partner:
+                    _logger.info("[GeminiBot] Skipping own message")
+                    continue
+
+                raw_body = message.body or ""
+                text = re.sub(r"<[^>]*>", "", raw_body).strip()
+                if not text:
+                    continue
+
+                _logger.info(f"[GeminiBot] User said: {text}")
+
+                try:
+                    reply = self.env["gemini.chatbot.api"].ask_gemini(text)
+                    _logger.info(f"[GeminiBot] Gemini replied: {reply}")
+
+                    channel.message_post(
+                        body=f" {reply}",
+                        message_type="comment",
+                        subtype_xmlid="mail.mt_comment",
+                        author_id=bot_partner.id,
+                    )
+                except Exception as e:
+                    _logger.error(f"[GeminiBot] Error: {e}")
+                    channel.message_post(
+                        body="Sorry, I am having trouble connecting to Gemini service right now.",
+                        message_type="comment",
+                        subtype_xmlid="mail.mt_comment",
+                    )
+
+        return messages

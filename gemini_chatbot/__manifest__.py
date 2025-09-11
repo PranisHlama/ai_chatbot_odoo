@@ -23,13 +23,14 @@ Usage:
     'author': "Pranish Lama",
     'category': 'Discuss',
     'version': '1.0.0',
-    'depends': ['base', 'mail'],
+    'depends': ['base', 'mail', 'mail_bot'],
 
     'data': [
-        'data/chatbot_data.xml',
+        # 'data/gemini_bot_data.xml',
         'views/views.xml',
     ],
-    'post_init_hook': 'create_chatbot_dm',
+    'post_init_hook': 'create_discuss_channel',
+
     
     'installable': True,
     'application': False,
