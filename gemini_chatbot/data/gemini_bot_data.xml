@@ -1,6 +1,0 @@
-<!-- <odoo>
-    <record id="partner_gemini_bot" model="res.partner">
-        <field name="name">Gemini Bot</field>
-        <field name="email">gemini.bot@example.com</field>
-    </record>
-</odoo> -->
