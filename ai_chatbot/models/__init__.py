@@ -2,5 +2,5 @@
 
 # from . import models
 # from .. import hooks
-from . import chatbot_api
-from . import message_bot
+# from . import chatbot_api
+# from . import message_bot
