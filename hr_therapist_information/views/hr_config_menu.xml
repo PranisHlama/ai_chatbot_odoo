@@ -1,0 +1,25 @@
+<odoo>
+    <record id="action_therapist_specialization" model="ir.actions.act_window">
+        <field name="name">Areas of Specialization</field>
+        <field name="res_model">therapist.specialization</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_therapist_language" model="ir.actions.act_window">
+        <field name="name">Language</field>
+        <field name="res_model">therapist.language</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_therapist_specialization"
+            name="Areas of Specialization"
+            parent="hr.menu_human_resources_configuration"
+            action="action_therapist_specialization"
+            sequence="55"/>
+    
+    <menuitem id="menu_therapist_language"
+            name="Language"
+            parent="hr.menu_human_resources_configuration"
+            action="action_therapist_language"
+            sequence="60"/>
+</odoo>

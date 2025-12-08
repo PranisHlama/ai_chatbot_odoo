@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="inherited_hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.therapist_information</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//form/sheet/notebook/page/div[@id='o_work_employee_container']/div[@id='o_work_employee_main']">
+                <group string="Therapist Information">
+                    <field name="license_number" />
+                    <field name="license_expiry_date" />
+                    <field name="specialization_ids" widget="many2many_tags"/>
+                    <field name="therapy_choice" />
+                    <field name="population"/>
+                    <field name="therapy_style" />
+                    <field name="language_ids" widget="many2many_tags"/>
+                    <field name="availability_status" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

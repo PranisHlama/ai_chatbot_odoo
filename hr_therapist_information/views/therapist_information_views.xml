@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_therapist_specialization_list" model="ir.ui.view">
+        <field name="name">therapist.specialization.list</field>
+        <field name="model">therapist.specialization</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="active" />
+            </list>
+        </field>
+    </record>
+
+    <record id="view_therapist_specialization_form" model="ir.ui.view">
+        <field name="name">therapist.specialization.form</field>
+        <field name="model">therapist.specialization</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="active" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_therapist_certificate_list" model="ir.ui.view">
+        <field name="name">therapist.certificate.list</field>
+        <field name="model">therapist.certificate</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+                <field name="file" filename="filename" />
+            </list>
+        </field>
+    </record>
+    <record id="view_therapist_certificate_form" model="ir.ui.view">
+        <field name="name">therapist.certificate.form</field>
+        <field name="model">therapist.certificate</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="file" filename="filename" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_therapist_language_list" model="ir.ui.view">
+        <field name="name">therapist.language.list</field>
+        <field name="model">therapist.language</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name" />
+            </list>
+        </field>
+    </record>
+    <record id="view_therapist_language_form" model="ir.ui.view">
+        <field name="name">therapist.language.form</field>
+        <field name="model">therapist.language</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

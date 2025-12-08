@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_therapist_information.access_therapist_specialization,access_therapist_specialization,hr_therapist_information.model_therapist_specialization,base.group_user,1,1,1,1
+hr_therapist_information.access_therapist_certificate,access_therapist_certificate,hr_therapist_information.model_therapist_certificate,base.group_user,1,1,1,1
+hr_therapist_information.access_therapist_language,access_therapist_language,hr_therapist_information.model_therapist_language,base.group_user,1,1,1,1
