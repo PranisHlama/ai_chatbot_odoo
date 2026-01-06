@@ -1,7 +1,7 @@
 <!-- <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- Demo Chat Bot -->
+        Demo Chat Bot 
         <record id="demo_chat_bot" model="chatgpt.chat.bot">
             <field name="name">AI Assistant</field>
             <field name="active">True</field>
@@ -14,7 +14,7 @@
             <field name="respond_to_all">False</field>
         </record>
 
-        <!-- Demo Bot Configuration -->
+        Demo Bot Configuration 
         <record id="demo_bot_config" model="chatgpt.bot.config">
             <field name="name">General Discussion Bot</field>
             <field name="active">True</field>
